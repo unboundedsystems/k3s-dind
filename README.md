@@ -1,3 +1,5 @@
+<p align="center"><img src="./k3s-dind.png" /></p>
+
 # k3s-dind
 Lightweight k3s Kubernetes inside a Docker-in-Docker container
 

@@ -37,7 +37,7 @@ K3S_ARGS=( \
     --no-deploy=traefik \
     --docker \
     --https-listen-port=8443 \
-    --bind-address=${K3S_NAME} \
+    --bind-address=0.0.0.0 \
     --node-name=${K3S_NAME} \
     --tls-san=${K3S_NAME} \
 )
@@ -49,7 +49,7 @@ function runServer {
 function getKubeconfig {
     local cfg=$(cat /etc/rancher/k3s/k3s.yaml)
     if [[ $cfg =~ password ]]; then
-        echo "${cfg}"
+        echo "${cfg}" | sed 's/\/\/0.0.0.0:/\/\/'"${K3S_NAME}"':/'
     fi
 }
 

@@ -60,7 +60,8 @@ function waitForKubeconfig {
         cfg=$(getKubeconfig)
     done
 
-    echo "${cfg}" > /kubeconfig
+    echo "${cfg}" > /tmp/kubeconfig
+    mv /tmp/kubeconfig /kubeconfig
 }
 
 

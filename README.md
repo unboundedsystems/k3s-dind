@@ -1,4 +1,4 @@
-<p align="center"><img src="./k3s-dind.png" /></p>
+<p align="center"><img src="https://github.com/unboundedsystems/k3s-dind/raw/master/k3s-dind.png" /></p>
 
 # k3s-dind
 Lightweight k3s Kubernetes inside a Docker-in-Docker container
@@ -7,7 +7,7 @@ Lightweight k3s Kubernetes inside a Docker-in-Docker container
 ```console
 docker network create k3s
 docker run -d --privileged --name k3s --hostname k3s --network k3s unboundedsystems/k3s-dind
-docker exec k3s cat /kubeconfig > ./k3sconfig
+docker exec k3s get-kubeconfig.sh > ./k3sconfig
 export KUBECONFIG=./k3sconfig
 
 kubectl get nodes

@@ -1,4 +1,4 @@
-FROM docker:stable-dind
+FROM docker:18.09.9-dind
 
 ENV K3S_VERSION=v0.5.0
 EXPOSE 8443

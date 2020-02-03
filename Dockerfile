@@ -1,6 +1,6 @@
 FROM docker:18.09.9-dind
 
-ENV K3S_VERSION=v1.0.0
+ENV K3S_VERSION="v1.17.0%2Bk3s.1"
 EXPOSE 8443
 
 ADD https://github.com/rancher/k3s/releases/download/${K3S_VERSION}/k3s /usr/local/bin/k3s
